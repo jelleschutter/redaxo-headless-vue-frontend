@@ -1,4 +1,4 @@
-# test-router2
+# redaxo-headless-vue
 
 ## Project setup
 ```
