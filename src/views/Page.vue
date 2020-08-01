@@ -11,6 +11,16 @@ import axios from "axios";
 
 const data = ref("");
 
+const updateData = (to, from, next) => {
+  const path = to.fullPath.substr(1);
+
+  axios
+    .get(`http://redaxo.localhost/?rex-api-call=headless_content&path=${path}`)
+    .then(response => (data.value = response.data));
+
+  next();
+};
+
 export default {
   setup() {
     watch(data, data => {
@@ -21,14 +31,7 @@ export default {
       data
     };
   },
-  beforeRouteEnter(to, from, next) {
-    const path = to.fullPath.substr(1);
-
-    axios
-      .get(`http://redaxo.localhost/?rex-api-call=headless&path=${path}`)
-      .then(response => (data.value = response.data));
-
-    next();
-  }
+  beforeRouteEnter: updateData,
+  beforeRouteUpdate: updateData
 };
 </script>
