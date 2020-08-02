@@ -15,7 +15,9 @@ const updateData = (to, from, next) => {
   const path = to.fullPath.substr(1);
 
   axios
-    .get(`http://redaxo.localhost/?rex-api-call=headless_content&path=${path}`)
+    .get(
+      `${process.env.VUE_APP_API_URL}/?rex-api-call=headless_content&path=${path}`
+    )
     .then(response => (data.value = response.data));
 
   next();

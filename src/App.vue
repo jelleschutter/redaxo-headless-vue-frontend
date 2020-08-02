@@ -30,7 +30,7 @@ export default {
 
     axios
       .get(
-        `http://redaxo.localhost/?rex-api-call=headless_nav&path=${path}&levels=1`
+        `${process.env.VUE_APP_API_URL}/?rex-api-call=headless_nav&path=${path}&levels=1`
       )
       .then(response => (nav.value = response.data));
   },
