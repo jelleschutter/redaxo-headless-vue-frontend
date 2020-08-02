@@ -1,0 +1,25 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - name: Installing NPM
+        run: npm install
+      - name: Build NPM
+        run: npm run build
+        env:
+          VUE_APP_API_URL: ${{ secrets.API_URL }}
+      - name: Deploy to GH Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist
