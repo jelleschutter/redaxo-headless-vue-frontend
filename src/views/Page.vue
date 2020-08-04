@@ -1,7 +1,11 @@
 <template>
-  <div class="about">
-    <h1>{{ data.title }}</h1>
+  <div class="page-content">
+    <h1 class="article-title">{{ data.title }}</h1>
     <main v-html="data.content"></main>
+    <footer>
+      &copy; 2020 -
+      <a href="https://github.com/jelleschutter">Jelle Schutter</a>
+    </footer>
   </div>
 </template>
 
@@ -37,3 +41,36 @@ export default {
   beforeRouteUpdate: updateData
 };
 </script>
+
+<style lang="scss">
+.article-title {
+  text-align: center;
+}
+.page-content {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+
+  main {
+    width: 100%;
+  }
+
+  figure {
+    margin: 0 auto;
+    max-width: 100%;
+
+    img {
+      margin: 0 auto;
+      max-width: 100%;
+    }
+
+    figcaption {
+      text-align: center;
+    }
+  }
+
+  footer {
+    text-align: center;
+  }
+}
+</style>
