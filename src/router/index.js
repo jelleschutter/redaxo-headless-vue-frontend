@@ -3,7 +3,7 @@ import Page from "../views/Page.vue";
 
 const routes = [
   {
-    path: "/:page*",
+    path: "/:page(.*)",
     name: "Page",
     component: Page
   }
