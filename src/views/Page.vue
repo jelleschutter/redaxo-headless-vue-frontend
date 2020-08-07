@@ -42,10 +42,11 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .article-title {
   text-align: center;
 }
+
 .page-content {
   width: 100%;
   max-width: 700px;
@@ -53,19 +54,25 @@ export default {
 
   main {
     width: 100%;
-  }
 
-  figure {
-    margin: 0 auto;
-    max-width: 100%;
+    &::v-deep {
+      figure {
+        margin: 0 auto;
+        max-width: 100%;
 
-    img {
-      margin: 0 auto;
-      max-width: 100%;
-    }
+        img {
+          margin: 0 auto;
+          max-width: 100%;
+        }
 
-    figcaption {
-      text-align: center;
+        figcaption {
+          text-align: center;
+        }
+      }
+
+      p {
+        text-align: justify;
+      }
     }
   }
 
