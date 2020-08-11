@@ -52,27 +52,25 @@ export default {
   max-width: 700px;
   margin: 0 auto;
 
-  main {
+  ::v-deep(main) {
     width: 100%;
 
-    &::v-deep {
-      figure {
+    figure {
+      margin: 0 auto;
+      max-width: 100%;
+
+      img {
         margin: 0 auto;
         max-width: 100%;
-
-        img {
-          margin: 0 auto;
-          max-width: 100%;
-        }
-
-        figcaption {
-          text-align: center;
-        }
       }
 
-      p {
-        text-align: justify;
+      figcaption {
+        text-align: center;
       }
+    }
+
+    p {
+      text-align: justify;
     }
   }
 
