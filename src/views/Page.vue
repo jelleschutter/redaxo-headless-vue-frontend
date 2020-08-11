@@ -1,7 +1,7 @@
 <template>
   <div class="page-content">
     <h1 class="article-title">{{ data.title }}</h1>
-    <main v-html="data.content"></main>
+    <main @click="click" v-html="data.content"></main>
     <footer>
       &copy; 2020 -
       <a href="https://github.com/jelleschutter">Jelle Schutter</a>
@@ -13,6 +13,7 @@
 import { ref, watch } from "vue";
 import axios from "axios";
 
+const router = ref();
 const data = ref("");
 
 const updateData = (to, from, next) => {
@@ -33,9 +34,24 @@ export default {
       document.title = data.meta.title;
     });
 
-    return {
-      data
+    const click = event => {
+      if (
+        event.target.tagName === "A" &&
+        event.target.attributes.href.value.substr(0, 1) === "/"
+      ) {
+        event.preventDefault();
+        router.value.push({ path: event.target.attributes.href.value });
+        return false;
+      }
     };
+
+    return {
+      data,
+      click
+    };
+  },
+  mounted() {
+    router.value = this.$router;
   },
   beforeRouteEnter: updateData,
   beforeRouteUpdate: updateData
