@@ -54,7 +54,6 @@ export default {
 
   a {
     font-weight: bold;
-    color: #2c3e50;
 
     &:not(:last-child) {
       margin-right: 10px;
@@ -64,5 +63,9 @@ export default {
       color: #42b983;
     }
   }
+}
+
+::v-deep(a, a:active) {
+  color: inherit;
 }
 </style>

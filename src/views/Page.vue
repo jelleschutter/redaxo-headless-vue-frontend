@@ -3,8 +3,11 @@
     <h1 class="article-title">{{ data.title }}</h1>
     <main @click="click" v-html="data.content"></main>
     <footer>
-      &copy; 2020 -
-      <a href="https://github.com/jelleschutter">Jelle Schutter</a>
+      <hr />
+      <p>
+        Made with ❤️ by
+        <a href="https://github.com/jelleschutter">Jelle Schutter</a>
+      </p>
     </footer>
   </div>
 </template>
@@ -82,6 +85,8 @@ export default {
 
       figcaption {
         text-align: center;
+        font-style: italic;
+        padding: 15px 0;
       }
     }
 
@@ -91,7 +96,19 @@ export default {
   }
 
   footer {
-    text-align: center;
+    padding: 20px 0;
+
+    hr {
+      border: none;
+      border-top: 1px solid #2c3e50;
+      margin: 0 auto;
+      width: 16%;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 23px;
+    }
   }
 }
 </style>
