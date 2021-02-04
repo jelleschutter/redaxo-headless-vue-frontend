@@ -18,5 +18,5 @@ jobs:
       - name: Deploy to REDAXO
         uses: jelleschutter/redaxo-headless-deploy@main
         with:
-          url: https://jelle.server4.bluemouse.ch
+          url: https://headless.jelle.server4.bluemouse.ch
           token: ${{ secrets.HEADLESS_TOKEN }}
