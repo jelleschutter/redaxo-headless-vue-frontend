@@ -15,11 +15,8 @@ jobs:
         run: npm install
       - name: Build NPM
         run: npm run build
-        env:
-          VUE_APP_API_URL: ${{ secrets.API_URL }}
-      - name: Deploy to Firebase
-        run: |
-          npm install -g firebase-tools
-          firebase deploy --only hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Deploy to REDAXO
+        uses: jelleschutter/redaxo-headless-deploy@main
+        with:
+          url: https://jelle.server4.bluemouse.ch
+          token: ${{ secrets.HEADLESS_TOKEN }}
