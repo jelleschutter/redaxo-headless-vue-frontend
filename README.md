@@ -9,14 +9,16 @@ This example application is not Search Engine Optimized (due to a lack of knowle
 
 ## Development Setup
 1. Please make sure that the [redaxo_headless](https://github.com/jelleschutter/redaxo_headless) addon is installed on your REDAXO Instance.
-2. Copy the ".env" file as ".env.local".
-3. Set the url of your REDAXO instance inside the ".env.local".
-4. Make sure the debug mode is enabled in the REDAXO addon.
-5. Install NPM dependencies run `npm install`
-5. Start app `npm run serve`
+2. Clone this repo.
+3. Copy the ".env" file as ".env.local".
+4. Set the url of your REDAXO instance inside the ".env.local".
+5. Make sure the debug mode is enabled in the REDAXO addon.
+6. Install NPM dependencies run `npm install`
+7. Start app `npm run serve`
 
 ## Deployment Setup
 1. Please make sure that the [redaxo_headless](https://github.com/jelleschutter/redaxo_headless) addon is installed on your REDAXO Instance.
 2. Make sure the headless/deployment plugin is installed and enabled.
-3. Enable in deployment and add a token in the REDAXO addon on the "deploy" page.
+3. Enable deployment and add a token in the REDAXO addon on the "deploy" page.
 4. Add GitHub action to the repo: [redaxo-headless-deploy](https://github.com/jelleschutter/redaxo-headless-deploy)
+5. Push your repo to GitHub.
