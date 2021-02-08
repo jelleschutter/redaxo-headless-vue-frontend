@@ -7,10 +7,19 @@ The navigation endpoint of the addon is used in "[src/App.vue](https://github.co
 ## SEO
 This example application is not Search Engine Optimized (due to a lack of knowlegde on my part). Feel free to add a PR!
 
-## Setup
-1. Please make sure that the [redaxo_headless](https://github.com/jelleschutter/redaxo_headless) AddOn is installed on your REDAXO Instance.
-2. Set the url of your REDAXO instance inside the ".env" file or set it as the VUE_APP_API_URL enviroment variable like for example [in the action of this repo](https://github.com/jelleschutter/redaxo_headless_vue_frontend/actions/runs/485727568/workflow#L19).
-3. Follow steps under "[NPM Development](#npm-development)".
+## Development Setup
+1. Please make sure that the [redaxo_headless](https://github.com/jelleschutter/redaxo_headless) addon is installed on your REDAXO Instance.
+2. Copy the ".env" file as ".env.local".
+3. Set the url of your REDAXO instance inside the ".env.local".
+4. Make sure the debug mode is enabled in the REDAXO addon.
+5. Install NPM dependencies run `npm install`
+5. Start app `npm run serve`
+
+## Deployment Setup
+1. Please make sure that the [redaxo_headless](https://github.com/jelleschutter/redaxo_headless) addon is installed on your REDAXO Instance.
+2. Make sure the headless/deployment plugin is installed and enabled.
+3. Enable in deployment and add a token in the REDAXO addon on the "deploy" page.
+4. Add GitHub action to the repo: [redaxo-headless-deploy](https://github.com/jelleschutter/redaxo-headless-deploy)
 
 ## NPM Development
 ### Install dependencies
