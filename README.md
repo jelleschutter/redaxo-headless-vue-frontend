@@ -20,27 +20,3 @@ This example application is not Search Engine Optimized (due to a lack of knowle
 2. Make sure the headless/deployment plugin is installed and enabled.
 3. Enable in deployment and add a token in the REDAXO addon on the "deploy" page.
 4. Add GitHub action to the repo: [redaxo-headless-deploy](https://github.com/jelleschutter/redaxo-headless-deploy)
-
-## NPM Development
-### Install dependencies
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
