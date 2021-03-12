@@ -5,13 +5,13 @@ const routes = [
   {
     path: "/:page(.*)",
     name: "Page",
-    component: Page
-  }
+    component: Page,
+  },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
 });
 
 export default router;

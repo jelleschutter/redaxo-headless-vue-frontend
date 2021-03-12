@@ -8,22 +8,22 @@ export default {
     name: {
       type: String,
       required: true,
-      default: ""
+      default: "",
     },
     link: {
       type: String,
       required: true,
-      default: ""
+      default: "",
     },
     active: {
       type: Boolean,
       required: true,
-      default: false
+      default: false,
     },
     children: {
       required: true,
-      default: []
-    }
-  }
+      default: [],
+    },
+  },
 };
 </script>

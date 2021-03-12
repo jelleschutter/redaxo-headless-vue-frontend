@@ -22,7 +22,7 @@ const nav = ref([]);
 export default {
   setup() {
     return {
-      nav
+      nav,
     };
   },
   mounted() {
@@ -32,11 +32,11 @@ export default {
       .get(
         `${process.env.VUE_APP_API_URL}/?rex-api-call=headless_nav&path=${path}&levels=1`
       )
-      .then(response => (nav.value = response.data));
+      .then((response) => (nav.value = response.data));
   },
   components: {
-    NavItem
-  }
+    NavItem,
+  },
 };
 </script>
 

@@ -26,18 +26,18 @@ const updateData = (to, from, next) => {
     .get(
       `${process.env.VUE_APP_API_URL}/?rex-api-call=headless_content&path=${path}`
     )
-    .then(response => (data.value = response.data));
+    .then((response) => (data.value = response.data));
 
   next();
 };
 
 export default {
   setup() {
-    watch(data, data => {
+    watch(data, (data) => {
       document.title = data.meta.title;
     });
 
-    const click = event => {
+    const click = (event) => {
       if (
         event.target.tagName === "A" &&
         event.target.attributes.href.value.substr(0, 1) === "/"
@@ -50,14 +50,14 @@ export default {
 
     return {
       data,
-      click
+      click,
     };
   },
   mounted() {
     router.value = this.$router;
   },
   beforeRouteEnter: updateData,
-  beforeRouteUpdate: updateData
+  beforeRouteUpdate: updateData,
 };
 </script>
 
